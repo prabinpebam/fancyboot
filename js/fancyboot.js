@@ -38,11 +38,8 @@ $(function () {
 			$(this).css('background-color', $(this).val());
 			$(this).css('color', fontColorforBgColor(rgba));
 
-			$("#preview").css('background-color', $('#bodyBackground').val());
-			$("#alertPreview").css('background-color', $('#bodyBackground').val());
-			$("#heroUnitPreview").css('background-color', $('#bodyBackground').val());
-			$("#buttonsPreview").css('background-color', $('#bodyBackground').val());
-			$("#dropdownPreview").css('background-color', $('#bodyBackground').val());
+			$(".preview").css('background-color', $('#bodyBackground').val());
+			
 
 
 		},
@@ -59,8 +56,12 @@ $(function () {
 			$(this).css('color', fontColorforBgColor(rgba));
 
 			//jquery css() does not work for applying hover color
-			$("#preview p").css("color", $('#textColor').val());
-			$("#preview table").css("color", $('#textColor').val());
+			$(".preview p").css("color", $('#textColor').val());
+			$(".preview table").css("color", $('#textColor').val());
+			
+			//exclude the text inside Hero Unit			
+			$(".preview .hero-unit p").css("color", $('#heroUnitLeadColor').val());
+			
 
 		},
 		open: function(hex, rgb) {},
@@ -76,8 +77,11 @@ $(function () {
 			$(this).css('color', fontColorforBgColor(rgba));
 
 			//jquery css() does not work for applying hover color
-			$("#preview h3").css("color", $('#headingsColor').val());
-			$("#preview h4").css("color", $('#headingsColor').val());
+			$(".preview h3").css("color", $('#headingsColor').val());
+			$(".preview h4").css("color", $('#headingsColor').val());
+			
+			//exclude the heading inside Hero Unit
+			$(".preview .hero-unit h1").css("color", $('#heroUnitHeadingColor').val());
 
 		},
 		open: function(hex, rgb) {},
@@ -179,6 +183,86 @@ $(function () {
 		close: function(hex, rgb) {}
 	});
 	
+	$('#hrBorder').miniColors({
+		opacity: true,
+		change: function(hex, rgba) {
+
+			//updating the color background of the input text field with suitable font color for the bg color
+			$(this).css('background-color', $(this).val());
+			$(this).css('color', fontColorforBgColor(rgba));
+			
+			$("#preview hr").css('border-top', "1px solid "+$('#hrBorder').val());
+
+		},
+		open: function(hex, rgb) {},
+		close: function(hex, rgb) {}
+	});
+	
+	$('#wellBackground').miniColors({
+		opacity: true,
+		change: function(hex, rgba) {
+
+			//updating the color background of the input text field with suitable font color for the bg color
+			$(this).css('background-color', $(this).val());
+			$(this).css('color', fontColorforBgColor(rgba));
+			
+			$(".preview .well").css('background-color', $('#wellBackground').val());
+			$(".preview .well").css('border', "1px solid "+ColorLuminance($('#wellBackground').val(), -0.7));
+
+		},
+		open: function(hex, rgb) {},
+		close: function(hex, rgb) {}
+	});
+	
+	
+	////////////////////////////////////////////////////////////
+	//Actions for Misc 2
+	////////////////////////////////////////////////////////////
+	$('#heroUnitBackground').miniColors({
+		opacity: true,
+		change: function(hex, rgba) {
+
+			//updating the color background of the input text field with suitable font color for the bg color
+			$(this).css('background-color', $(this).val());
+			$(this).css('color', fontColorforBgColor(rgba));
+			
+			$(".preview .hero-unit").css('background-color', $('#heroUnitBackground').val());
+
+		},
+		open: function(hex, rgb) {},
+		close: function(hex, rgb) {}
+	});
+	
+	$('#heroUnitHeadingColor').miniColors({
+		opacity: true,
+		change: function(hex, rgba) {
+
+			//updating the color background of the input text field with suitable font color for the bg color
+			$(this).css('background-color', $(this).val());
+			$(this).css('color', fontColorforBgColor(rgba));
+			
+			$(".preview .hero-unit h1").css('color', $('#heroUnitHeadingColor').val());
+
+		},
+		open: function(hex, rgb) {},
+		close: function(hex, rgb) {}
+	});
+	
+	$('#heroUnitLeadColor').miniColors({
+		opacity: true,
+		change: function(hex, rgba) {
+
+			//updating the color background of the input text field with suitable font color for the bg color
+			$(this).css('background-color', $(this).val());
+			$(this).css('color', fontColorforBgColor(rgba));
+			
+			$(".preview .hero-unit p").css('color', $('#heroUnitLeadColor').val());
+
+		},
+		open: function(hex, rgb) {},
+		close: function(hex, rgb) {}
+	});
+	
 	
 	////////////////////////////////////////////////////////////
 	//Actions for Tables
@@ -224,10 +308,8 @@ $(function () {
 			$(this).css('background-color', $(this).val());
 			$(this).css('color', fontColorforBgColor(rgba));
 
-			$("#buttonsPreview .btn-normal").css('background-image', "-webkit-linear-gradient(top, "+$('#btnBackground').val()+", "+$('#btnBackgroundHighlight').val()+")");
-			$("#preview .btn-normal").css('background-image', "-webkit-linear-gradient(top, "+$('#btnBackground').val()+", "+$('#btnBackgroundHighlight').val()+")");
-			$("#buttonsPreview .btn-normal").css('background-color', $('#btnBackgroundHighlight').val());
-			$("#preview .btn-normal").css('background-color', $('#btnBackgroundHighlight').val());
+			$(".preview .btn-normal").css('background-image', "-webkit-linear-gradient(top, "+$('#btnBackground').val()+", "+$('#btnBackgroundHighlight').val()+")");
+			$(".preview .btn-normal").css('background-color', $('#btnBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
 		close: function(hex, rgb) {}
@@ -241,10 +323,9 @@ $(function () {
 			$(this).css('background-color', $(this).val());
 			$(this).css('color', fontColorforBgColor(rgba));
 
-			$("#buttonsPreview .btn-normal").css('background-image', "-webkit-linear-gradient(top, "+$('#btnBackground').val()+", "+$('#btnBackgroundHighlight').val()+")");
-			$("#preview .btn-normal").css('background-image', "-webkit-linear-gradient(top, "+$('#btnBackground').val()+", "+$('#btnBackgroundHighlight').val()+")");
-			$("#buttonsPreview .btn-normal").css('background-color', $('#btnBackgroundHighlight').val());
-			$("#preview .btn-normal").css('background-color', $('#btnBackgroundHighlight').val());
+			$(".preview .btn-normal").css('background-image', "-webkit-linear-gradient(top, "+$('#btnBackground').val()+", "+$('#btnBackgroundHighlight').val()+")");
+			$(".preview .btn-normal").css('background-color', $('#btnBackgroundHighlight').val());
+			
 		},
 		open: function(hex, rgb) {},
 		close: function(hex, rgb) {}
@@ -259,10 +340,8 @@ $(function () {
 			$(this).css('background-color', $(this).val());
 			$(this).css('color', fontColorforBgColor(rgba));
 
-			$("#buttonsPreview .btn-primary").css('background-image', "-webkit-linear-gradient(top, "+$('#btnPrimaryBackground').val()+", "+$('#btnPrimaryBackgroundHighlight').val()+")");
-			$("#preview .btn-primary").css('background-image', "-webkit-linear-gradient(top, "+$('#btnPrimaryBackground').val()+", "+$('#btnPrimaryBackgroundHighlight').val()+")");
-			$("#buttonsPreview .btn-primary").css('background-color', $('#btnPrimaryBackgroundHighlight').val());
-			$("#preview .btn-primary").css('background-color', $('#btnPrimaryBackgroundHighlight').val());
+			$(".preview .btn-primary").css('background-image', "-webkit-linear-gradient(top, "+$('#btnPrimaryBackground').val()+", "+$('#btnPrimaryBackgroundHighlight').val()+")");
+			$(".preview .btn-primary").css('background-color', $('#btnPrimaryBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
 		close: function(hex, rgb) {}
@@ -276,10 +355,8 @@ $(function () {
 			$(this).css('background-color', $(this).val());
 			$(this).css('color', fontColorforBgColor(rgba));
 
-			$("#buttonsPreview .btn-primary").css('background-image', "-webkit-linear-gradient(top, "+$('#btnPrimaryBackground').val()+", "+$('#btnPrimaryBackgroundHighlight').val()+")");
-			$("#preview .btn-primary").css('background-image', "-webkit-linear-gradient(top, "+$('#btnPrimaryBackground').val()+", "+$('#btnPrimaryBackgroundHighlight').val()+")");
-			$("#buttonsPreview .btn-primary").css('background-color', $('#btnPrimaryBackgroundHighlight').val());
-			$("#preview .btn-primary").css('background-color', $('#btnPrimaryBackgroundHighlight').val());
+			$(".preview .btn-primary").css('background-image', "-webkit-linear-gradient(top, "+$('#btnPrimaryBackground').val()+", "+$('#btnPrimaryBackgroundHighlight').val()+")");
+			$(".preview .btn-primary").css('background-color', $('#btnPrimaryBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
 		close: function(hex, rgb) {}
@@ -293,10 +370,8 @@ $(function () {
 			$(this).css('background-color', $(this).val());
 			$(this).css('color', fontColorforBgColor(rgba));
 
-			$("#buttonsPreview .btn-info").css('background-image', "-webkit-linear-gradient(top, "+$('#btnInfoBackground').val()+", "+$('#btnInfoBackgroundHighlight').val()+")");
-			$("#preview .btn-info").css('background-image', "-webkit-linear-gradient(top, "+$('#btnInfoBackground').val()+", "+$('#btnInfoBackgroundHighlight').val()+")");
-			$("#buttonsPreview .btn-info").css('background-color', $('#btnInfoBackgroundHighlight').val());
-			$("#preview .btn-info").css('background-color', $('#btnInfoBackgroundHighlight').val());
+			$(".preview .btn-info").css('background-image', "-webkit-linear-gradient(top, "+$('#btnInfoBackground').val()+", "+$('#btnInfoBackgroundHighlight').val()+")");
+			$(".preview .btn-info").css('background-color', $('#btnInfoBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
 		close: function(hex, rgb) {}
@@ -310,10 +385,8 @@ $(function () {
 			$(this).css('background-color', $(this).val());
 			$(this).css('color', fontColorforBgColor(rgba));
 
-			$("#buttonsPreview .btn-info").css('background-image', "-webkit-linear-gradient(top, "+$('#btnInfoBackground').val()+", "+$('#btnInfoBackgroundHighlight').val()+")");
-			$("#preview .btn-info").css('background-image', "-webkit-linear-gradient(top, "+$('#btnInfoBackground').val()+", "+$('#btnInfoBackgroundHighlight').val()+")");
-			$("#buttonsPreview .btn-info").css('background-color', $('#btnInfoBackgroundHighlight').val());
-			$("#preview .btn-info").css('background-color', $('#btnInfoBackgroundHighlight').val());
+			$(".preview .btn-info").css('background-image', "-webkit-linear-gradient(top, "+$('#btnInfoBackground').val()+", "+$('#btnInfoBackgroundHighlight').val()+")");
+			$(".preview .btn-info").css('background-color', $('#btnInfoBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
 		close: function(hex, rgb) {}
@@ -327,10 +400,8 @@ $(function () {
 			$(this).css('background-color', $(this).val());
 			$(this).css('color', fontColorforBgColor(rgba));
 
-			$("#buttonsPreview .btn-success").css('background-image', "-webkit-linear-gradient(top, "+$('#btnSuccessBackground').val()+", "+$('#btnSuccessBackgroundHighlight').val()+")");
-			$("#preview .btn-success").css('background-image', "-webkit-linear-gradient(top, "+$('#btnSuccessBackground').val()+", "+$('#btnSuccessBackgroundHighlight').val()+")");
-			$("#buttonsPreview .btn-success").css('background-color', $('#btnSuccessBackgroundHighlight').val());
-			$("#preview .btn-success").css('background-color', $('#btnSuccessBackgroundHighlight').val());
+			$(".preview .btn-success").css('background-image', "-webkit-linear-gradient(top, "+$('#btnSuccessBackground').val()+", "+$('#btnSuccessBackgroundHighlight').val()+")");
+			$(".preview .btn-success").css('background-color', $('#btnSuccessBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
 		close: function(hex, rgb) {}
@@ -344,10 +415,8 @@ $(function () {
 			$(this).css('background-color', $(this).val());
 			$(this).css('color', fontColorforBgColor(rgba));
 
-			$("#buttonsPreview .btn-success").css('background-image', "-webkit-linear-gradient(top, "+$('#btnSuccessBackground').val()+", "+$('#btnSuccessBackgroundHighlight').val()+")");
-			$("#preview .btn-success").css('background-image', "-webkit-linear-gradient(top, "+$('#btnSuccessBackground').val()+", "+$('#btnSuccessBackgroundHighlight').val()+")");
-			$("#buttonsPreview .btn-success").css('background-color', $('#btnSuccessBackgroundHighlight').val());
-			$("#preview .btn-success").css('background-color', $('#btnSuccessBackgroundHighlight').val());
+			$(".preview .btn-success").css('background-image', "-webkit-linear-gradient(top, "+$('#btnSuccessBackground').val()+", "+$('#btnSuccessBackgroundHighlight').val()+")");
+			$(".preview .btn-success").css('background-color', $('#btnSuccessBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
 		close: function(hex, rgb) {}
@@ -361,10 +430,8 @@ $(function () {
 			$(this).css('background-color', $(this).val());
 			$(this).css('color', fontColorforBgColor(rgba));
 
-			$("#buttonsPreview .btn-warning").css('background-image', "-webkit-linear-gradient(top, "+$('#btnWarningBackground').val()+", "+$('#btnWarningBackgroundHighlight').val()+")");
-			$("#preview .btn-warning").css('background-image', "-webkit-linear-gradient(top, "+$('#btnWarningBackground').val()+", "+$('#btnWarningBackgroundHighlight').val()+")");
-			$("#buttonsPreview .btn-warning").css('background-color', $('#btnWarningBackgroundHighlight').val());
-			$("#preview .btn-warning").css('background-color', $('#btnWarningBackgroundHighlight').val());
+			$(".preview .btn-warning").css('background-image', "-webkit-linear-gradient(top, "+$('#btnWarningBackground').val()+", "+$('#btnWarningBackgroundHighlight').val()+")");
+			$(".preview .btn-warning").css('background-color', $('#btnWarningBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
 		close: function(hex, rgb) {}
@@ -378,10 +445,8 @@ $(function () {
 			$(this).css('background-color', $(this).val());
 			$(this).css('color', fontColorforBgColor(rgba));
 
-			$("#buttonsPreview .btn-warning").css('background-image', "-webkit-linear-gradient(top, "+$('#btnWarningBackground').val()+", "+$('#btnWarningBackgroundHighlight').val()+")");
-			$("#preview .btn-warning").css('background-image', "-webkit-linear-gradient(top, "+$('#btnWarningBackground').val()+", "+$('#btnWarningBackgroundHighlight').val()+")");
-			$("#buttonsPreview .btn-warning").css('background-color', $('#btnWarningBackgroundHighlight').val());
-			$("#preview .btn-warning").css('background-color', $('#btnWarningBackgroundHighlight').val());
+			$(".preview .btn-warning").css('background-image', "-webkit-linear-gradient(top, "+$('#btnWarningBackground').val()+", "+$('#btnWarningBackgroundHighlight').val()+")");
+			$(".preview .btn-warning").css('background-color', $('#btnWarningBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
 		close: function(hex, rgb) {}
@@ -395,10 +460,8 @@ $(function () {
 			$(this).css('background-color', $(this).val());
 			$(this).css('color', fontColorforBgColor(rgba));
 
-			$("#buttonsPreview .btn-danger").css('background-image', "-webkit-linear-gradient(top, "+$('#btnDangerBackground').val()+", "+$('#btnDangerBackgroundHighlight').val()+")");
-			$("#preview .btn-danger").css('background-image', "-webkit-linear-gradient(top, "+$('#btnDangerBackground').val()+", "+$('#btnDangerBackgroundHighlight').val()+")");
-			$("#buttonsPreview .btn-danger").css('background-color', $('#btnDangerBackgroundHighlight').val());
-			$("#preview .btn-danger").css('background-color', $('#btnDangerBackgroundHighlight').val());
+			$(".preview .btn-danger").css('background-image', "-webkit-linear-gradient(top, "+$('#btnDangerBackground').val()+", "+$('#btnDangerBackgroundHighlight').val()+")");
+			$(".preview .btn-danger").css('background-color', $('#btnDangerBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
 		close: function(hex, rgb) {}
@@ -412,10 +475,8 @@ $(function () {
 			$(this).css('background-color', $(this).val());
 			$(this).css('color', fontColorforBgColor(rgba));
 
-			$("#buttonsPreview .btn-danger").css('background-image', "-webkit-linear-gradient(top, "+$('#btnDangerBackground').val()+", "+$('#btnDangerBackgroundHighlight').val()+")");
-			$("#preview .btn-danger").css('background-image', "-webkit-linear-gradient(top, "+$('#btnDangerBackground').val()+", "+$('#btnDangerBackgroundHighlight').val()+")");
-			$("#buttonsPreview .btn-danger").css('background-color', $('#btnDangerBackgroundHighlight').val());
-			$("#preview .btn-danger").css('background-color', $('#btnDangerBackgroundHighlight').val());
+			$(".preview .btn-danger").css('background-image', "-webkit-linear-gradient(top, "+$('#btnDangerBackground').val()+", "+$('#btnDangerBackgroundHighlight').val()+")");
+			$(".preview .btn-danger").css('background-color', $('#btnDangerBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
 		close: function(hex, rgb) {}
@@ -429,10 +490,8 @@ $(function () {
 			$(this).css('background-color', $(this).val());
 			$(this).css('color', fontColorforBgColor(rgba));
 
-			$("#buttonsPreview .btn-inverse").css('background-image', "-webkit-linear-gradient(top, "+$('#btnInverseBackground').val()+", "+$('#btnInverseBackgroundHighlight').val()+")");
-			$("#preview .btn-inverse").css('background-image', "-webkit-linear-gradient(top, "+$('#btnInverseBackground').val()+", "+$('#btnInverseBackgroundHighlight').val()+")");
-			$("#buttonsPreview .btn-inverse").css('background-color', $('#btnInverseBackgroundHighlight').val());
-			$("#preview .btn-inverse").css('background-color', $('#btnInverseBackgroundHighlight').val());
+			$(".preview .btn-inverse").css('background-image', "-webkit-linear-gradient(top, "+$('#btnInverseBackground').val()+", "+$('#btnInverseBackgroundHighlight').val()+")");
+			$(".preview .btn-inverse").css('background-color', $('#btnInverseBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
 		close: function(hex, rgb) {}
@@ -446,10 +505,8 @@ $(function () {
 			$(this).css('background-color', $(this).val());
 			$(this).css('color', fontColorforBgColor(rgba));
 
-			$("#buttonsPreview .btn-inverse").css('background-image', "-webkit-linear-gradient(top, "+$('#btnInverseBackground').val()+", "+$('#btnInverseBackgroundHighlight').val()+")");
-			$("#preview .btn-inverse").css('background-image', "-webkit-linear-gradient(top, "+$('#btnInverseBackground').val()+", "+$('#btnInverseBackgroundHighlight').val()+")");
-			$("#buttonsPreview .btn-inverse").css('background-color', $('#btnInverseBackgroundHighlight').val());
-			$("#preview .btn-inverse").css('background-color', $('#btnInverseBackgroundHighlight').val());
+			$(".preview .btn-inverse").css('background-image', "-webkit-linear-gradient(top, "+$('#btnInverseBackground').val()+", "+$('#btnInverseBackgroundHighlight').val()+")");
+			$(".preview .btn-inverse").css('background-color', $('#btnInverseBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
 		close: function(hex, rgb) {}

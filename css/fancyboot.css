@@ -5,6 +5,12 @@
 
 /* Justify the facbook comment to 100% width */
 .fb-comments, .fb-comments span[style], .fb-comments iframe[style] {width: 100% !important;}
+.preview input[type="text"] {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	color: #333;
+	margin-bottom: 0;
+}
 
 /* Base class */
 .preview {
