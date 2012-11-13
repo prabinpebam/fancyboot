@@ -40,6 +40,9 @@ $(function () {
 
 			$(".preview").css('background-color', $('#bodyBackground').val());
 			
+			//setting the table background color to the set value as it is initially transparent
+			$(".preview table").css("background-color", $('#tableBackground').val());
+			
 
 
 		},
@@ -290,12 +293,62 @@ $(function () {
 			$(this).css('background-color', $(this).val());
 			$(this).css('color', fontColorforBgColor(rgba));
 
-			$("#preview td").css("border-top", "1px solid "+$('#tableBorder').val());
+			$(".preview td").css("border-top", "1px solid "+$('#tableBorder').val());
 
 		},
 		open: function(hex, rgb) {},
 		close: function(hex, rgb) {}
 	});
+	
+	$('#tableBackgroundHover').miniColors({
+		opacity: true,
+		change: function(hex, rgba) {
+
+			//updating the color background of the input text field with suitable font color for the bg color
+			$(this).css('background-color', $(this).val());
+			$(this).css('color', fontColorforBgColor(rgba));
+
+			$(".preview td").css("background-color", $('#tableBackgroundHover').val());
+			$(".preview .rowAccent td").css("background-color", $('#tableBackgroundAccent').val());
+
+		},
+		open: function(hex, rgb) {},
+		close: function(hex, rgb) {
+			$(".preview td").css("background-color", $('#tableBackground').val());
+			$(".preview .rowAccent td").css("background-color", $('#tableBackgroundAccent').val());
+		}
+	});
+	
+	$('.preview td').hover(
+		function(){
+			$(this).css("background-color", $('#tableBackgroundHover').val());
+			$(this).siblings('td').css("background-color", $('#tableBackgroundHover').val());
+		},
+		function(){
+			$(".preview table").css("background-color", $('#tableBackground').val());
+			$(".preview td").css("background-color", $('#tableBackground').val());
+			$(".preview .rowAccent td").css("background-color", $('#tableBackgroundAccent').val());
+		}
+	);
+	
+	$('#tableBackground').miniColors({
+		opacity: true,
+		change: function(hex, rgba) {
+
+			//updating the color background of the input text field with suitable font color for the bg color
+			$(this).css('background-color', $(this).val());
+			$(this).css('color', fontColorforBgColor(rgba));
+
+			$(".preview table").css("background-color", $('#tableBackground').val());
+			$(".preview td").css("background-color", $('#tableBackground').val());
+			$(".preview .rowAccent td").css("background-color", $('#tableBackgroundAccent').val());
+
+		},
+		open: function(hex, rgb) {},
+		close: function(hex, rgb) {}
+	});
+	
+	
 	
 	/////////////////////////////////////////////////////////////////////////////////////////
 	//Buttons
