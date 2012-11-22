@@ -1,7 +1,7 @@
 [Fancyboot](https://github.com/prabinpebam/fancyboot.git)
 =================
 
-Fancyboot is a simple yet powerful customization tool for Bootstrap with just the right amount of control and without all the unnecessary complexity.
+Fancyboot is a simple yet powerful customization tool for Bootstrap with just the right amount of control and without all the unnecessary complexities.
 Give it a try at http://fancyboot.designspebam.com
 
 

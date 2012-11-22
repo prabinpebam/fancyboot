@@ -349,9 +349,133 @@ $(function () {
 	});
 	
 	
+	/////////////////////////////////////////////////////////////////////////////////////////
+	//Action for forms
+	/////////////////////////////////////////////////////////////////////////////////////////
+	
+	$(".preview .formPreview input").focusout(function(){
+		$(".preview .formPreview input").val("");	
+	});
+	
+	$(".preview .formPreview select").focusout(function(){
+		$(".preview .formPreview select").val("");	
+	});
+	
+	$(".preview .formPreview textarea").focusout(function(){
+		$(".preview .formPreview textarea").val("");	
+	});
+	
+	$('#placeholderText').miniColors({
+		opacity: true,
+		change: function(hex, rgba) {
+
+			//updating the color background of the input text field with suitable font color for the bg color
+			$(this).css('background-color', $(this).val());
+			$(this).css('color', fontColorforBgColor(rgba));
+
+			$(".preview .formPreview input:first").val("Placeholder preview");
+			$(".preview .formPreview input:first").css("color", $('#placeholderText').val());
+		},
+		open: function(hex, rgb) {},
+		close: function(hex, rgb) {
+			$(".preview .formPreview input:first").val("");
+			$(".preview .formPreview input:first").css("color", $('grayDark').val());
+		}
+	});
+		
+	$('#inputBackground').miniColors({
+		opacity: true,
+		change: function(hex, rgba) {
+
+			//updating the color background of the input text field with suitable font color for the bg color
+			$(this).css('background-color', $(this).val());
+			$(this).css('color', fontColorforBgColor(rgba));
+
+			$(".preview .formPreview input").css("background-color", $('#inputBackground').val());
+			$(".preview .formPreview input:last").css("background-color", $('#inputDisabledBackground').val());
+			$(".preview .formPreview select").css("background-color", $('#inputBackground').val());
+			$(".preview .formPreview textarea").css("background-color", $('#inputBackground').val());
+		},
+		open: function(hex, rgb) {},
+		close: function(hex, rgb) {
+		}
+	});
+	
+	$('#inputBorder').miniColors({
+		opacity: true,
+		change: function(hex, rgba) {
+
+			//updating the color background of the input text field with suitable font color for the bg color
+			$(this).css('background-color', $(this).val());
+			$(this).css('color', fontColorforBgColor(rgba));
+			
+			$(".preview .formPreview input").css("border", "1px solid "+$('#inputBorder').val());
+			$(".preview .formPreview select").css("border", "1px solid "+$('#inputBorder').val());
+			$(".preview .formPreview textarea").css("border", "1px solid "+$('#inputBorder').val());
+		},
+		open: function(hex, rgb) {},
+		close: function(hex, rgb) {
+		}
+	});
+	
+	$('#inputBorderRadius').keyup(function(){
+		//cache our input since we will be working with it each time an arrow key is pressed
+		var $input = $('#inputBorderRadius'),
+			strLength = $('#inputBorderRadius').val().length;
+		
+		
+		//up-arrow (regular and num-pad)
+		if (event.which == 38 || event.which == 104) {
+
+			//make sure to use `parseInt()` so you can numerically add to the value rather than concocting a longer string
+			$input.val((parseInt($input.val().substring(0,strLength-2)) + 1)+"px");
+
+		//down-arrow (regular and num-pad)
+		}else if (event.which == 40 || event.which == 98) {
+			$input.val((parseInt($input.val().substring(0,strLength-2)) - 1)+"px");
+		}
+	
+		$(".preview .formPreview input").css("-webkit-border-radius", $('#inputBorderRadius').val());
+		$(".preview .formPreview select").css("-webkit-border-radius", $('#inputBorderRadius').val());
+		$(".preview .formPreview textarea").css("-webkit-border-radius", $('#inputBorderRadius').val());
+		
+		
+	});	
+		
+	$('#inputDisabledBackground').miniColors({
+		opacity: true,
+		change: function(hex, rgba) {
+
+			//updating the color background of the input text field with suitable font color for the bg color
+			$(this).css('background-color', $(this).val());
+			$(this).css('color', fontColorforBgColor(rgba));
+			
+			$(".preview .formPreview input:last").css("background-color", $('#inputDisabledBackground').val());
+		},
+		open: function(hex, rgb) {},
+		close: function(hex, rgb) {
+		}
+	});
+	
+	$('#formActionsBackground').miniColors({
+		opacity: true,
+		change: function(hex, rgba) {
+
+			//updating the color background of the input text field with suitable font color for the bg color
+			$(this).css('background-color', $(this).val());
+			$(this).css('color', fontColorforBgColor(rgba));
+			
+			$(".preview .formPreview .form-actions").css("background-color", $('#formActionsBackground').val());
+		},
+		open: function(hex, rgb) {},
+		close: function(hex, rgb) {
+		}
+	});
+	
+	
 	
 	/////////////////////////////////////////////////////////////////////////////////////////
-	//Buttons
+	//Action for Buttons
 	/////////////////////////////////////////////////////////////////////////////////////////
 	$('#btnBackground').miniColors({
 		opacity: true,
