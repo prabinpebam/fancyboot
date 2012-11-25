@@ -47,7 +47,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Misc1', 'bodyBackground']);
+		}
 	});
 	
 	$('#textColor').miniColors({
@@ -68,7 +70,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Misc1', 'textColor']);
+		}
 	});
 
 	$('#headingsColor').miniColors({
@@ -88,7 +92,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Misc1', 'headingsColor']);
+		}
 	});
 
 	$('#linkColor').miniColors({
@@ -108,7 +114,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Misc1', 'linkColor']);
+		}
 	});
 
 	$('#linkColorHover').miniColors({
@@ -125,7 +133,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Misc1', 'linkColorHover']);
+		}
 	});
 
 	
@@ -144,7 +154,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Misc2', 'paginationBackground']);
+		}
 	});
 	
 	$("#preview .pagination .normal a").hover(
@@ -169,7 +181,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Misc2', 'paginationActiveBackground']);
+		}
 	});
 	
 	$('#paginationBorder').miniColors({
@@ -183,7 +197,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Misc2', 'paginationBorder']);
+		}
 	});
 	
 	$('#hrBorder').miniColors({
@@ -198,7 +214,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Misc2', 'hrBorder']);
+		}
 	});
 	
 	$('#wellBackground').miniColors({
@@ -210,16 +228,18 @@ $(function () {
 			$(this).css('color', fontColorforBgColor(rgba));
 			
 			$(".preview .well").css('background-color', $('#wellBackground').val());
-			$(".preview .well").css('border', "1px solid "+ColorLuminance($('#wellBackground').val(), -0.7));
+			$(".preview .well").css('border', "1px solid "+ColorLuminance($('#wellBackground').val(), -0.07));
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Misc2', 'wellBackground']);
+		}
 	});
 	
 	
 	////////////////////////////////////////////////////////////
-	//Actions for Misc 2
+	//Actions for Hero Unit
 	////////////////////////////////////////////////////////////
 	$('#heroUnitBackground').miniColors({
 		opacity: true,
@@ -233,7 +253,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Hero Unit', 'heroUnitBackground']);
+		}
 	});
 	
 	$('#heroUnitHeadingColor').miniColors({
@@ -248,7 +270,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Hero Unit', 'heroUnitHeadingColor']);
+		}
 	});
 	
 	$('#heroUnitLeadColor').miniColors({
@@ -263,7 +287,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Hero Unit', 'heroUnitLeadColor']);
+		}
 	});
 	
 	
@@ -282,7 +308,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Tables', 'tableBackgroundAccent']);
+		}
 	});
 
 	$('#tableBorder').miniColors({
@@ -297,7 +325,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Tables', 'tableBorder']);
+		}
 	});
 	
 	$('#tableBackgroundHover').miniColors({
@@ -316,6 +346,8 @@ $(function () {
 		close: function(hex, rgb) {
 			$(".preview td").css("background-color", $('#tableBackground').val());
 			$(".preview .rowAccent td").css("background-color", $('#tableBackgroundAccent').val());
+			
+			_gaq.push(['_trackEvent', 'customize', 'Tables', 'tableBackgroundHover']);
 		}
 	});
 	
@@ -345,7 +377,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Tables', 'tableBackground']);
+		}
 	});
 	
 	
@@ -380,6 +414,8 @@ $(function () {
 		close: function(hex, rgb) {
 			$(".preview .formPreview input:first").val("");
 			$(".preview .formPreview input:first").css("color", $('grayDark').val());
+			
+			_gaq.push(['_trackEvent', 'customize', 'Forms', 'placeholderText']);
 		}
 	});
 		
@@ -398,6 +434,7 @@ $(function () {
 		},
 		open: function(hex, rgb) {},
 		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Forms', 'inputBackground']);
 		}
 	});
 	
@@ -415,14 +452,14 @@ $(function () {
 		},
 		open: function(hex, rgb) {},
 		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Forms', 'inputBorder']);
 		}
 	});
 	
 	$('#inputBorderRadius').keyup(function(){
 		//cache our input since we will be working with it each time an arrow key is pressed
 		var $input = $('#inputBorderRadius'),
-			strLength = $('#inputBorderRadius').val().length;
-		
+			strLength = $('#inputBorderRadius').val().length;		
 		
 		//up-arrow (regular and num-pad)
 		if (event.which == 38 || event.which == 104) {
@@ -437,10 +474,13 @@ $(function () {
 	
 		$(".preview .formPreview input").css("-webkit-border-radius", $('#inputBorderRadius').val());
 		$(".preview .formPreview select").css("-webkit-border-radius", $('#inputBorderRadius').val());
-		$(".preview .formPreview textarea").css("-webkit-border-radius", $('#inputBorderRadius').val());
-		
-		
-	});	
+		$(".preview .formPreview textarea").css("-webkit-border-radius", $('#inputBorderRadius').val());		
+	});
+	
+	//track this event with google analytics upon losing focus of this field
+	$('#inputBorderRadius').blur(function(){
+		_gaq.push(['_trackEvent', 'customize', 'Forms', 'inputBorderRadius']);
+	});
 		
 	$('#inputDisabledBackground').miniColors({
 		opacity: true,
@@ -454,6 +494,7 @@ $(function () {
 		},
 		open: function(hex, rgb) {},
 		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Forms', 'inputDisabledBackground']);
 		}
 	});
 	
@@ -469,6 +510,7 @@ $(function () {
 		},
 		open: function(hex, rgb) {},
 		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Forms', 'formActionsBackground']);
 		}
 	});
 	
@@ -489,7 +531,9 @@ $(function () {
 			$(".preview .btn-normal").css('background-color', $('#btnBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Buttons', 'btnBackground']);
+		}
 	});
 	
 	$('#btnBackgroundHighlight').miniColors({
@@ -505,7 +549,9 @@ $(function () {
 			
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Buttons', 'btnBackgroundHighlight']);
+		}
 	});
 	
 	
@@ -521,7 +567,9 @@ $(function () {
 			$(".preview .btn-primary").css('background-color', $('#btnPrimaryBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Buttons', 'btnPrimaryBackground']);
+		}
 	});
 	
 	$('#btnPrimaryBackgroundHighlight').miniColors({
@@ -536,7 +584,9 @@ $(function () {
 			$(".preview .btn-primary").css('background-color', $('#btnPrimaryBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Buttons', 'btnPrimaryBackgroundHighlight']);
+		}
 	});
 	
 	$('#btnInfoBackground').miniColors({
@@ -551,7 +601,9 @@ $(function () {
 			$(".preview .btn-info").css('background-color', $('#btnInfoBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Buttons', 'btnInfoBackground']);
+		}
 	});
 	
 	$('#btnInfoBackgroundHighlight').miniColors({
@@ -566,7 +618,9 @@ $(function () {
 			$(".preview .btn-info").css('background-color', $('#btnInfoBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Buttons', 'btnInfoBackgroundHighlight']);
+		}
 	});
 	
 	$('#btnSuccessBackground').miniColors({
@@ -581,7 +635,9 @@ $(function () {
 			$(".preview .btn-success").css('background-color', $('#btnSuccessBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Buttons', 'btnSuccessBackground']);
+		}
 	});
 	
 	$('#btnSuccessBackgroundHighlight').miniColors({
@@ -596,7 +652,9 @@ $(function () {
 			$(".preview .btn-success").css('background-color', $('#btnSuccessBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Buttons', 'btnSuccessBackgroundHighlight']);
+		}
 	});
 	
 	$('#btnWarningBackground').miniColors({
@@ -611,7 +669,9 @@ $(function () {
 			$(".preview .btn-warning").css('background-color', $('#btnWarningBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Buttons', 'btnWarningBackground']);
+		}
 	});
 	
 	$('#btnWarningBackgroundHighlight').miniColors({
@@ -626,7 +686,9 @@ $(function () {
 			$(".preview .btn-warning").css('background-color', $('#btnWarningBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Buttons', 'btnWarningBackgroundHighlight']);
+		}
 	});
 	
 	$('#btnDangerBackground').miniColors({
@@ -641,7 +703,9 @@ $(function () {
 			$(".preview .btn-danger").css('background-color', $('#btnDangerBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Buttons', 'btnDangerBackground']);
+		}
 	});
 	
 	$('#btnDangerBackgroundHighlight').miniColors({
@@ -656,7 +720,9 @@ $(function () {
 			$(".preview .btn-danger").css('background-color', $('#btnDangerBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Buttons', 'btnDangerBackgroundHighlight']);
+		}
 	});
 	
 	$('#btnInverseBackground').miniColors({
@@ -671,7 +737,9 @@ $(function () {
 			$(".preview .btn-inverse").css('background-color', $('#btnInverseBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Buttons', 'btnInverseBackground']);
+		}
 	});
 	
 	$('#btnInverseBackgroundHighlight').miniColors({
@@ -686,7 +754,9 @@ $(function () {
 			$(".preview .btn-inverse").css('background-color', $('#btnInverseBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Buttons', 'btnInverseBackgroundHighlight']);
+		}
 	});
 	
 	
@@ -705,7 +775,9 @@ $(function () {
 			$("#alertPreview .alert-warning").css('background-color', $('#warningBackground').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Alerts', 'warningBackground']);
+		}
 	});
 
 	$('#warningText').miniColors({
@@ -719,7 +791,9 @@ $(function () {
 			$("#alertPreview .alert-warning").css('color', $('#warningText').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Alerts', 'warningText']);
+		}
 	});
 
 	$('#warningBorder').miniColors({
@@ -733,7 +807,9 @@ $(function () {
 			$("#alertPreview .alert-warning").css('border', "1px solid "+$('#warningBorder').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Alerts', 'warningBorder']);
+		}
 	});
 
 	//for error alert
@@ -748,7 +824,9 @@ $(function () {
 			$("#alertPreview .alert-error").css('background-color', $('#errorBackground').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Alerts', 'errorBackground']);
+		}
 	});
 
 	$('#errorText').miniColors({
@@ -762,7 +840,9 @@ $(function () {
 			$("#alertPreview .alert-error").css('color', $('#errorText').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Alerts', 'errorText']);
+		}
 	});
 
 	$('#errorBorder').miniColors({
@@ -776,7 +856,9 @@ $(function () {
 			$("#alertPreview .alert-error").css('border', "1px solid "+$('#errorBorder').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Alerts', 'errorBorder']);
+		}
 	});
 
 	//for success alert
@@ -791,7 +873,9 @@ $(function () {
 			$("#alertPreview .alert-success").css('background-color', $('#successBackground').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Alerts', 'successBackground']);
+		}
 	});
 
 	$('#successText').miniColors({
@@ -805,7 +889,9 @@ $(function () {
 			$("#alertPreview .alert-success").css('color', $('#successText').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Alerts', 'successText']);
+		}
 	});
 
 	$('#successBorder').miniColors({
@@ -819,7 +905,9 @@ $(function () {
 			$("#alertPreview .alert-success").css('border', "1px solid "+$('#successBorder').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Alerts', 'successBorder']);
+		}
 	});
 
 	//for info alert
@@ -834,7 +922,9 @@ $(function () {
 			$("#alertPreview .alert-info").css('background-color', $('#infoBackground').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Alerts', 'infoBackground']);
+		}
 	});
 
 	$('#infoText').miniColors({
@@ -848,7 +938,9 @@ $(function () {
 			$("#alertPreview .alert-info").css('color', $('#infoText').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Alerts', 'infoText']);
+		}
 	});
 
 	$('#infoBorder').miniColors({
@@ -862,7 +954,9 @@ $(function () {
 			$("#alertPreview .alert-info").css('border', "1px solid "+$('#infoBorder').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Alerts', 'infoBorder']);
+		}
 	});
 
 
@@ -888,6 +982,10 @@ $(function () {
 		$("#navbarInversePreview .navbar-search").css('margin-top', ($('#navbarHeight').val().slice(0,-2)-30)/2+"px");
 		$("#navbarInversePreview .btn-navbar").css('margin-top', ($('#navbarHeight').val().slice(0,-2)-30)/2+"px");
 	});
+	
+	$('#navbarHeight').blur(function(){
+		_gaq.push(['_trackEvent', 'customize', 'Navbar', 'navbarHeight']);
+	});
 
 
 
@@ -909,7 +1007,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar', 'navbarBackground']);
+		}
 	});
 
 	$('#navbarBackgroundHighlight').miniColors({
@@ -925,7 +1025,9 @@ $(function () {
 			$("#navbarPreview .divider-vertical").css('border-right', "1px solid "+$('#navbarBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar', 'navbarBackgroundHighlight']);
+		}
 	});
 
 	$('#navbarBorder').miniColors({
@@ -939,7 +1041,9 @@ $(function () {
 			$("#navbarPreview .navbar-inner").css('border-color', $('#navbarBorder').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar', 'navbarBorder']);
+		}
 	});
 
 	$('#navbarText').miniColors({
@@ -953,7 +1057,9 @@ $(function () {
 			$("#navbarPreview").css('color', $('#navbarText').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar', 'navbarText']);
+		}
 	});
 
 	$('#navbarBrandColor').miniColors({
@@ -968,7 +1074,9 @@ $(function () {
 			$("#navbarPreview .brand").css('color', $('#navbarBrandColor').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar', 'navbarBrandColor']);
+		}
 	});
 
 	$('#navbarLinkColor').miniColors({
@@ -1003,7 +1111,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar', 'navbarLinkColor']);
+		}
 	});
 
 	$('#navbarLinkColorHover').miniColors({
@@ -1029,7 +1139,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar', 'navbarLinkColorHover']);
+		}
 	});
 
 	$('#navbarLinkColorActive').miniColors({
@@ -1046,7 +1158,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar', 'navbarLinkColorActive']);
+		}
 	});
 	
 	//action for navbarInverseLinkBackgroundHover/////////////////////////////////////////////////////////////////////
@@ -1060,6 +1174,7 @@ $(function () {
 			$(this).css('background-color', '#ffffff');
 			$(this).css('color', '#333333');
 		}
+		_gaq.push(['_trackEvent', 'customize', 'Navbar', 'navbarLinkBackgroundHover']);
 	});
 	
 	$("#navbarPreview .nav>li").hover(
@@ -1093,7 +1208,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar', 'navbarLinkBackgroundActive']);
+		}
 	});
 
 	//setting the color of dropdown toggle link to the active link background and back to normal on toggle off
@@ -1125,7 +1242,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar', 'navbarSearchBackground']);
+		}
 	});
 
 
@@ -1147,6 +1266,8 @@ $(function () {
 			//setting back to the unfocus color state
 			$("#navbarPreview input").css('border', '1px solid '+$('#navbarBackground').val());
 			$("#navbarPreview input").css('background-color',  $('#navbarSearchBackground').val());
+			
+			_gaq.push(['_trackEvent', 'customize', 'Navbar', 'navbarSearchBackgroundFocus']);
 		}
 	});
 	
@@ -1162,7 +1283,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar', 'navbarSearchBorder']);
+		}
 	});
 
 	$('#navbarSearchPlaceholderColor').miniColors({
@@ -1177,7 +1300,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar', 'navbarSearchPlaceholderColor']);
+		}
 	});
 
 	$("#navbarPreview input").focus(function(){
@@ -1213,7 +1338,9 @@ $(function () {
 			$("#navbarInversePreview .divider-vertical").css('border-left', "1px solid "+$('#navbarInverseBackground').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar Inverse', 'navbarInverseBackground']);
+		}
 	});
 
 	$('#navbarInverseBackgroundHighlight').miniColors({
@@ -1229,7 +1356,9 @@ $(function () {
 			$("#navbarInversePreview .divider-vertical").css('border-right', "1px solid "+$('#navbarInverseBackgroundHighlight').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar Inverse', 'navbarInverseBackgroundHighlight']);
+		}
 	});
 
 	$('#navbarInverseBorder').miniColors({
@@ -1243,7 +1372,9 @@ $(function () {
 			$("#navbarInversePreview .navbar-inner").css('border-color', $('#navbarInverseBorder').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar Inverse', 'navbarInverseBorder']);
+		}
 	});
 
 	$('#navbarInverseText').miniColors({
@@ -1257,7 +1388,9 @@ $(function () {
 			$("#navbarInversePreview").css('color', $('#navbarInverseText').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar Inverse', 'navbarInverseText']);
+		}
 	});
 	
 	$('#navbarInverseBrandColor').miniColors({
@@ -1271,7 +1404,9 @@ $(function () {
 			$("#navbarInversePreview .brand").css('color', $('#navbarInverseBrandColor').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar Inverse', 'navbarInverseBrandColor']);
+		}
 	});
 
 
@@ -1307,7 +1442,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar Inverse', 'navbarInverseLinkColor']);
+		}
 	});
 
 	$('#navbarInverseLinkColorHover').miniColors({
@@ -1333,7 +1470,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar Inverse', 'navbarInverseLinkColorHover']);
+		}
 	});
 
 	$('#navbarInverseLinkColorActive').miniColors({
@@ -1350,7 +1489,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar Inverse', 'navbarInverseLinkColorActive']);
+		}
 	});	
 	
 	
@@ -1365,6 +1506,8 @@ $(function () {
 			$(this).css('background-color', '#ffffff');
 			$(this).css('color', '#333333');
 		}
+		
+		_gaq.push(['_trackEvent', 'customize', 'Navbar Inverse', 'navbarInverseLinkBackgroundHover']);
 	});
 	
 	$("#navbarInversePreview .nav>li").hover(
@@ -1399,7 +1542,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar Inverse', 'navbarInverseLinkBackgroundActive']);
+		}
 	});
 
 
@@ -1434,7 +1579,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar Inverse', 'navbarInverseSearchBackground']);
+		}
 	});
 
 
@@ -1456,6 +1603,8 @@ $(function () {
 			//setting back to the unfocus color state
 			$("#navbarInversePreview input").css('border', '1px solid '+$('#navbarInverseBackground').val());
 			$("#navbarInversePreview input").css('background-color',  $('#navbarInverseSearchBackground').val());
+			
+			_gaq.push(['_trackEvent', 'customize', 'Navbar Inverse', 'navbarInverseSearchBackgroundFocus']);
 		}
 	});
 	
@@ -1471,7 +1620,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar Inverse', 'navbarInverseSearchBorder']);
+		}
 	});
 
 	$('#navbarInverseSearchPlaceholderColor').miniColors({
@@ -1486,7 +1637,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Navbar Inverse', 'navbarInverseSearchPlaceholderColor']);
+		}
 	});
 
 	$("#navbarInversePreview input").focus(function(){
@@ -1523,7 +1676,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Dropdown', 'dropdownBackground']);
+		}
 	});
 
 	$('#dropdownLinkColor').miniColors({
@@ -1541,7 +1696,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Dropdown', 'dropdownLinkColor']);
+		}
 	});
 
 	$('#dropdownLinkColorHover').miniColors({
@@ -1561,6 +1718,8 @@ $(function () {
 			//closing the realtime preview
 			$("#dropdownPreview a:first").css('background-image', "none");
 			$("#dropdownPreview a:first").css('color', $('#dropdownLinkColor').val());
+			
+			_gaq.push(['_trackEvent', 'customize', 'Dropdown', 'dropdownLinkColorHover']);
 		}
 	});
 
@@ -1618,6 +1777,8 @@ $(function () {
 			//closing the realtime preview
 			$("#dropdownPreview a:first").css('background-image', "none");
 			$("#dropdownPreview a:first").css('color', $('#dropdownLinkColor').val());
+			
+			_gaq.push(['_trackEvent', 'customize', 'Dropdown', 'dropdownLinkBackgroundHover']);
 		}
 	});
 
@@ -1635,7 +1796,9 @@ $(function () {
 			$("#navbarInversePreview .dropdown-menu .divider").css('background-color', $('#dropdownDividerTop').val());
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Dropdown', 'dropdownDividerTop']);
+		}
 	});
 
 	$('#dropdownDividerBottom').miniColors({
@@ -1652,7 +1815,9 @@ $(function () {
 
 		},
 		open: function(hex, rgb) {},
-		close: function(hex, rgb) {}
+		close: function(hex, rgb) {
+			_gaq.push(['_trackEvent', 'customize', 'Dropdown', 'dropdownDividerBottom']);
+		}
 	});
 
 

@@ -109,7 +109,7 @@
 			<p>The awesome color picker (<a href="http://www.abeautifulsite.net/blog/2011/02/jquery-minicolors-a-color-selector-for-input-controls/" target="_blank">jQuery Minicolor</a>) that's been used in this page is a jQuery plugin from "<a href="http://www.abeautifulsite.net" target="_blank">Cory LaViska for A Beautiful Site </a>".</p>
 			<p>Finally, thanks to myself for finally making a decent customization tool for Bootstrap. :)</p>
 			<p>Visit my site at <a href="http://designspebam.com" target="_blank">http://designspebam.com</a> to see my other works</p>
-			<div id="social" class="tooltips" style="display:block;">
+			<div class="social tooltips" style="display:block;">
 				<a href="http://www.facebook.com/prabinpebam" target="_blank" rel="tooltip" class="facebook" data-original-title="Facebook" >Facebook</a>
 				<a href="https://twitter.com/prabinpebam" target="_blank" rel="tooltip" class="twitter" data-original-title="Twitter" >Twitter</a>
 				<a href="https://plus.google.com/117627201976556995410/posts" target="_blank"  rel="tooltip" class="googleplus" data-original-title="Google Plus" >Google Plus</a>
@@ -760,15 +760,18 @@
 							<div class="row download-builder">
 								<div class="span10">
 									<h3>Forms</h3>
-									<p class="alert alert-info">
-										<span class="label label-info"><i class="icon-info-sign icon-white"></i></span>
-										 Unluckily, as of Bootstrap 2.2.1, the text color of the form fields has all been assigned a default value
-										 and can't be changed. What you see is the default color which might not be suitable for darker background color.
-									</p>
 								</div>
 								<div class="span3">
 									<label>@placeholderText</label>
 									<input id="placeholderText" type="text" class="span2 colorPicker" value="#999999" placeholder="#999999">
+									<a	href="#"
+										class="label label-info previewTooltip"
+										rel="popover"
+										data-trigger="hover"
+										data-original-title="Info"
+										data-content="Placeholder color is previewd only temporaily as you change the color until I find a better way." >
+											<i class="icon-info-sign icon-white"></i>
+									</a>
 								</div>
 								<div class="span3">
 									<label>@inputBackground</label>
@@ -781,7 +784,14 @@
 								<div class="span3">
 									<label>@inputBorderRadius</label>
 									<input id="inputBorderRadius" type="text" class="span2" value="3px" placeholder="3px">
-									<a href="#" class="label label-info previewTooltip" rel="popover" data-trigger="hover" data-original-title="Info" data-content="Focus on the field & use the up & down arrow key to adjust value." ><i class="icon-info-sign icon-white"></i></a>
+									<a	href="#"
+										class="label label-info previewTooltip"
+										rel="popover"
+										data-trigger="hover"
+										data-original-title="Info"
+										data-content="Focus on the field & use the up & down arrow key to adjust value." >
+											<i class="icon-info-sign icon-white"></i>
+									</a>
 								</div>
 								<div class="span3">
 									<label>@inputDisabledBackground</label>
@@ -790,6 +800,15 @@
 								<div class="span3">
 									<label>@formActionsBackground</label>
 									<input id="formActionsBackground" type="text" class="span2 colorPicker" value="#f5f5f5" placeholder="#f5f5f5">
+								</div>
+								<div class="span10">
+									<p class="alert alert-info">
+										<span class="label label-info"><i class="icon-info-sign icon-white"></i></span>
+										 Unluckily, as of Bootstrap 2.2.1, the text color of the form fields has all been assigned a default value
+										 and can't be changed. What you see is the default color which might not be suitable for darker background color.
+										 You can't have any value in the form preview fields as that interfere when you finally submit the form to compile.
+										 Hence any value is cleared as soon as the field lose focus.
+									</p>
 								</div>
 							</div>
 						</div>
@@ -1191,7 +1210,7 @@
     ================================================== -->
     <footer class="footer">
       <div class="container">
-		<div id="social" class="tooltips pull-right" style="display:block;">
+		<div class="social tooltips pull-right" style="display:block;">
 			<a href="http://www.facebook.com/prabinpebam" target="_blank" rel="tooltip" class="facebook" data-original-title="Facebook" >Facebook</a>
 			<a href="https://twitter.com/prabinpebam" target="_blank" rel="tooltip" class="twitter" data-original-title="Twitter" >Twitter</a>
 			<a href="https://plus.google.com/117627201976556995410/posts" target="_blank"  rel="tooltip" class="googleplus" data-original-title="Google Plus" >Google Plus</a>
