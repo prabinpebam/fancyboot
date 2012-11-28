@@ -61,71 +61,22 @@
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
 
-	<div class="container">
 	
 	
 
     <!-- Docs nav
     ================================================== -->
-    <div class="row">
-		<div class="span10 offset1">
-			<img src="img/i-love-bootstrap.png" alt="I Love Bootstrap">
-		</div>
+		<div class="span3">
+        <ul class="nav nav-list affix" data-offset-top="40">
+			<li><a href="#global"><i class="icon-chevron-right"></i> Global styles</a></li>
+			<li><a href="#gridSystem"><i class="icon-chevron-right"></i> Grid system</a></li>
+			<li class="active"><a href="#fluidGridSystem"><i class="icon-chevron-right"></i> Fluid grid system</a></li>
+			<li><a href="#layouts"><i class="icon-chevron-right"></i> Layouts</a></li>
+			<li><a href="#responsive"><i class="icon-chevron-right"></i> Responsive design</a></li>
+        </ul>
+      </div>
+		
 		<div class="span12">
-			<div class="marketing">
-				<h1>Fancyboot</h1>
-				<p class="marketing-byline">Customizing Bootstrap the easy way. Made for Bootstrap lovers.</p>
-				<p class="marketing-byline">Version 1.0.0</p>
-				<p>					 
-					<iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=prabinpebam&repo=fancyboot&type=watch" allowtransparency="true" frameborder="0" scrolling="0" width="55px" height="20px"></iframe>
-					<iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=prabinpebam&repo=fancyboot&type=fork" allowtransparency="true" frameborder="0" scrolling="0" width="55px" height="20px"></iframe>
-				</p>
-				<hr class="soften">
-			  </div>
-		</div>
-		<div class="span4">
-			<h2>What to expect</h2>
-			<ul>
-				<li>Color picker to conveniently chose and preview colors.</li>
-				<li>See realtime preview as you customize each variable.</li>
-				<li>Extra variables which are not there in the <a href="http://twitter.github.com/bootstrap/customize.html" target="_blank">official customization page</a>.</li>				
-			</ul>
-			<h4>What to expect in future</h4>
-			<ul>
-				<li>Exhaustive coverage of all customizable variables available.</li>
-				<li>Save your customizations.</li>
-				<li>Share your customization and access others'.</li>
-				<li>Ability to use either hexadecimal or <strong>{less}</strong> variables.</li>				
-				<li>Better user interface. I'm working on one at present. I hope I get enough free time to finish it.</li>
-			</ul>
-		</div>
-		<div class="span4">
-			<h2>Points to note</h2>
-			<ul>
-				<li>This version of Fancyboot is designed for Bootstrap Ver. 2.2.1</li>
-				<li>The current version was developed to work fine only on Google Chrome (for now). Some effects might not show correctly in the preview on other browsers.</li>
-				<li>Not all effects will be shown in the preview. But don't worry, the final compiled bootstrap css will be perfect as originally intended by Bootstrap.</li>
-				<li>Some fields are left without the color picker intentionally as you might want to use <strong>{less}</strong> variables.</li>
-			</ul>
-		</div>
-		<div class="span4">
-			<h2>Credits</h2>
-			<p>Thanks to the bootstrap team, <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a> for such a wonderful framework.</p>
-			<p>Please visit the official Bootstrap website at <a href="http://twitter.github.com/bootstrap/" target="_blank">http://twitter.github.com/bootstrap/</a> for full documentations and downloads.</p>
-			<p>The awesome color picker (<a href="http://www.abeautifulsite.net/blog/2011/02/jquery-minicolors-a-color-selector-for-input-controls/" target="_blank">jQuery Minicolor</a>) that's been used in this page is a jQuery plugin from "<a href="http://www.abeautifulsite.net" target="_blank">Cory LaViska for A Beautiful Site </a>".</p>
-			<p>Finally, thanks to myself for finally making a decent customization tool for Bootstrap. :)</p>
-			<p>Visit my site at <a href="http://designspebam.com" target="_blank">http://designspebam.com</a> to see my other works</p>
-			<div class="social tooltips" style="display:block;">
-				<a href="http://www.facebook.com/prabinpebam" target="_blank" rel="tooltip" class="facebook" data-original-title="Facebook" >Facebook</a>
-				<a href="https://twitter.com/prabinpebam" target="_blank" rel="tooltip" class="twitter" data-original-title="Twitter" >Twitter</a>
-				<a href="https://plus.google.com/117627201976556995410/posts" target="_blank"  rel="tooltip" class="googleplus" data-original-title="Google Plus" >Google Plus</a>
-				<a href="http://dribbble.com/prabinpebam" target="_blank"  rel="tooltip" class="dribbble" data-original-title="Dribbble" >Dribbble</a>
-				<a href="http://www.linkedin.com/pub/prabin-pebam/20/54b/b1b" target="_blank"  rel="tooltip" class="linkedin" data-original-title="LinkedIn" >LinkedIn</a>
-				<a href="http://www.prabinpebam.deviantart.com/" target="_blank"  rel="tooltip" class="deviantart" data-original-title="DeviantART" >DeviantART</a>
-			</div>
-		</div>
-		<div class="span12">
-
 
         <!-- Customize form
         ================================================== -->
@@ -636,95 +587,79 @@
 								</div>
 								<div class="span3">
 									<label>@sansFontFamily</label>
-									<input id="sansFontFamily" type="text" class="span3" placeholder="'Helvetica Neue', Helvetica, Arial, sans-serif">
+									<input type="text" class="span3" placeholder="'Helvetica Neue', Helvetica, Arial, sans-serif">
 								</div>
 								<div class="span3">
 									<label>@serifFontFamily</label>
-									<input id="serifFontFamily" type="text" class="span3" placeholder="Georgia, 'Times New Roman', Times, serif">
+									<input type="text" class="span3" placeholder="Georgia, 'Times New Roman', Times, serif">
 								</div>
 								<div class="span3">
 									<label>@monoFontFamily</label>
-									<input id="monoFontFamily" type="text" class="span3" placeholder="Menlo, Monaco, 'Courier New', monospace">
+									<input type="text" class="span3" placeholder="Menlo, Monaco, 'Courier New', monospace">
 								</div>
 								<div class="span3">
 									<label>@baseFontSize</label>
-									<input id="baseFontSize" type="text" class="span2" value="14px" placeholder="14px">
-									<a	href="#"
-										class="label label-info previewTooltip"
-										rel="popover"
-										data-trigger="hover"
-										data-original-title="Info"
-										data-content="Focus on the field & use the up & down key to change the value.">
-											<i class="icon-info-sign icon-white"></i>
-									</a>
+									<input type="text" class="span3" placeholder="14px">
 								</div>
 								<div class="span3">
 									<label>@baseFontFamily</label>
-									<input id="baseFontFamily" type="text" class="span3" placeholder="@sansFontFamily">
+									<input type="text" class="span3" placeholder="@sansFontFamily">
 								</div>
 								<div class="span3">
 									<label>@baseLineHeight</label>
-									<input id="baseLineHeight" type="text" class="span2" value="20px" placeholder="20px">
-									<a	href="#"
-										class="label label-info previewTooltip"
-										rel="popover"
-										data-trigger="hover"
-										data-original-title="Info"
-										data-content="Height of input[type='file'] is controlled by inputHeight in the Form tab.">
-											<i class="icon-info-sign icon-white"></i>
-									</a>
+									<input type="text" class="span3" placeholder="20px">
 								</div>
 								<div class="span3">
 									<label>@altFontFamily</label>
-									<input id="altFontFamily" type="text" class="span3" placeholder="@serifFontFamily">
+									<input type="text" class="span3" placeholder="@serifFontFamily">
 								</div>
 								<div class="span3">
 									<label>@headingsFontFamily</label>
-									<input id="headingsFontFamily" type="text" class="span3" placeholder="inherit">
+									<input type="text" class="span3" placeholder="inherit">
 								</div>
 								<div class="span3">
 									<label>@headingsFontWeight</label>
-									<input id="headingsFontWeight" type="text" class="span3" placeholder="bold">
+									<input type="text" class="span3" placeholder="bold">
 								</div>
 								<div class="span3">
 									<label>@headingsColor</label>
-									<input id="headingsColor" type="text" class="span3" placeholder="inherit">
+									<input type="text" class="span3" placeholder="inherit">
 								</div>
 								<div class="span3">
 									<label>@fontSizeLarge</label>
-									<input id="fontSizeLarge" type="text" class="span3" placeholder="@baseFontSize * 1.25">
+									<input type="text" class="span3" placeholder="@baseFontSize * 1.25">
 								</div>
 								<div class="span3">
 									<label>@fontSizeSmall</label>
-									<input id="fontSizeSmall" type="text" class="span3" placeholder="@baseFontSize * 0.85">
+									<input type="text" class="span3" placeholder="@baseFontSize * 0.85">
 								</div>
 								<div class="span3">
 									<label>@fontSizeMini</label>
-									<input id="fontSizeMini" type="text" class="span3" placeholder="@baseFontSize * 0.75">
+									<input type="text" class="span3" placeholder="@baseFontSize * 0.75">
 								</div>
 								<div class="span3">
 									<label>@paddingLarge</label>
-									<input id="paddingLarge" type="text" class="span3" placeholder="11px 19px">
+									<input type="text" class="span3" placeholder="11px 19px">
 								</div>
 								<div class="span3">
 									<label>@paddingSmall</label>
-									<input id="paddingSmall" type="text" class="span3" placeholder="2px 10px">
+									<input type="text" class="span3" placeholder="2px 10px">
 								</div>
 								<div class="span3">
 									<label>@paddingMini</label>
-									<input id="paddingMini" type="text" class="span3" placeholder="1px 6px">
+									<input type="text" class="span3" placeholder="1px 6px">
 								</div>
 								<div class="span3">
 									<label>@baseBorderRadius</label>
-									<input id="baseBorderRadius" type="text" class="span3" placeholder="4px">
+									<input type="text" class="span3" placeholder="4px">
 								</div>
 								<div class="span3">
 									<label>@borderRadiusLarge</label>
-									<input id="borderRadiusLarge" type="text" class="span3" placeholder="6px">
+									<input type="text" class="span3" placeholder="6px">
 								</div>
 								<div class="span3">
 									<label>@borderRadiusSmall</label>
-									<input id="borderRadiusSmall" type="text" class="span3" placeholder="3px">
+									<input type="text" class="span3" placeholder="3px">
 								</div>
 							</div>
 						</div>
@@ -822,18 +757,6 @@
 								<div class="span3">
 									<label>@formActionsBackground</label>
 									<input id="formActionsBackground" type="text" class="span2 colorPicker" value="#f5f5f5" placeholder="#f5f5f5">
-								</div>
-								<div class="span3">
-									<label>@inputHeight</label>
-									<input id="inputHeight" type="text" class="span2" value="30px" placeholder="30px">
-									<a	href="#"
-										class="label label-info previewTooltip"
-										rel="popover"
-										data-trigger="hover"
-										data-original-title="Info"
-										data-content="This controls only the height of input[type='file']." >
-											<i class="icon-info-sign icon-white"></i>
-									</a>
 								</div>
 								<div class="span10">
 									<p class="alert alert-info">
@@ -1077,15 +1000,7 @@
 								</div>
 								<div class="span3">
 									<label>@navbarHeight</label>
-									<input id="navbarHeight" type="text" class="span2" value="40px" placeholder="40px">
-									<a	href="#"
-										class="label label-info previewTooltip"
-										rel="popover"
-										data-trigger="hover"
-										data-original-title="Info"
-										data-content="Focus on the field & use the up & down key to change the value.">
-											<i class="icon-info-sign icon-white"></i>
-									</a>
+									<input id="navbarHeight" type="text" class="span2" placeholder="40px">
 								</div>
 								<div class="span3">
 									<label>@navbarCollapseWidth</label>
@@ -1096,14 +1011,6 @@
 									<label>@navbarCollapseDesktopWidth</label>
 									<input type="text" class="span2" placeholder="@navbarCollapseWidth + 1">
 									<a href="#" class="label label-warning previewTooltip" rel="popover" data-trigger="hover" data-original-title="Warning!" data-content="The current version doesn't support preview of this feature." ><i class="icon-warning-sign icon-white"></i></a>
-								</div>
-								<div class="span10">
-									<hr>
-									<p>
-										<strong>Note:</strong> The Search field's height in the nav bar is directly taken from the <i>@baselineHeight</i> from the Typography tab.
-										When you change the navbar height, Bootstrap 2.2.1 tries to align it vertically to the centre by assuming it's
-										height to be a fixed value of 30px. Hence, it does not align properly for greater navbar heights.
-									</p>
 								</div>
 							</div>
 						</div>
@@ -1173,6 +1080,7 @@
 								<div class="span10">
 									<hr>
 									<p>Please go to the "Navbar" tab for common variables between "Navbar" and "Navbar Inverse".</p>
+									<p><Strong>Note:</strong> As of current, the colorpicker plugin does not allow any other value than hexadecimal code in the input field. So the <em>@navbarLinkBackgroundHover</em> field has been left without the color picker in case you want it to be transparent. But you can always type a hexadecimal code of your choice and it should work.</p>
 								</div>
 							</div>
 						</div>
@@ -1243,15 +1151,12 @@
           </section><!-- /download -->
         </form>
       </div>
-    </div>
 	<div class="row">
 		<div class="span12">
 			<h4>Please leave your comments below</h4>
 			<div class="fb-comments" data-href="http://fancyboot.designspebam.com/" data-num-posts="5" data-width="800"></div>
 		</div>
 	</div>
-
-  </div><!-- /container -->
 
 
 

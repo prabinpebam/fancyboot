@@ -1,7 +1,7 @@
 /* Social Icons - small
 =================================================================== */
 
-#social a {
+.social a {
 	width: 28px;
 	height: 28px;
 	margin: 0 6px 6px 0;
@@ -16,7 +16,7 @@
 	transition: all 0.3s ease-in-out;
 }
 
-#social a:hover {
+.social a:hover {
 	width: 28px;
 	height: 28px;
 	margin: 0 6px 6px 0;
@@ -26,11 +26,11 @@
 	background-position: 0 -38px;
 }
 
-#social a img{
+.social a img{
 	border: none;
 }
 
-#social-r a {
+.social-r a {
 	width: 28px;
 	height: 28px;
 	margin: 0 6px 6px 0;
@@ -45,7 +45,7 @@
 	transition: all 0.3s ease-in-out;
 }
 
-#social-r a:hover {
+.social-r a:hover {
 	width: 28px;
 	height: 28px;
 	margin: 0 6px 6px 0;
@@ -55,7 +55,7 @@
 	background-position: 0 0px;
 }
 
-#social-r a img{
+.social-r a img{
 	border: none;
 }
 

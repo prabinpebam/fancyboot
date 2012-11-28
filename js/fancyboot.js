@@ -237,6 +237,160 @@ $(function () {
 		}
 	});
 	
+	////////////////////////////////////////////////////////////
+	//Actions for Typography
+	////////////////////////////////////////////////////////////
+	$('#baseFontSize').keyup(function(){
+		//cache our input since we will be working with it each time an arrow key is pressed
+		var $input = $('#baseFontSize'),
+			strLength = $('#baseFontSize').val().length,
+			//removing the px at the end of the string
+			valueInt = parseInt($input.val().slice(0,-2));
+			
+		//up-arrow (regular and num-pad)
+		if (event.which == 38 || event.which == 104) {
+
+			//make sure to use `parseInt()` so you can numerically add to the value rather than concocting a longer string
+			valueInt += 1;
+			$input.val(valueInt+"px");
+
+		//down-arrow (regular and num-pad)
+		}else if (event.which == 40 || event.which == 98) {
+			valueInt -= 1;
+			$input.val(valueInt+"px");
+		}
+	
+		$(".preview").css("font-size", valueInt + "px");
+		
+		//Relevant Headings
+		$(".preview h1").css("font-size", valueInt*2.75 + "px");
+		$(".preview h2").css("font-size", valueInt*2.25 + "px");
+		$(".preview h3").css("font-size", valueInt*1.75 + "px");
+		$(".preview h4").css("font-size", valueInt*1.25 + "px");
+		
+		//Buttons
+		$(".preview .btn").css("font-size", valueInt + "px");
+		
+		//Form elements
+		$(".preview .legend").css("font-size", valueInt*1.5 + "px");
+		$(".preview .formPreview label").css("font-size", valueInt + "px");
+		$(".preview .formPreview input").css("font-size", valueInt + "px");
+		$(".preview .formPreview select").css("font-size", valueInt + "px");
+		$(".preview .formPreview textarea").css("font-size", valueInt + "px");
+		
+		//Labels & Badges
+		$(".preview .label").css("font-size", valueInt*0.846 + "px");
+		$(".preview .badge").css("font-size", valueInt*0.846 + "px");
+	});
+	
+	//track this event with google analytics upon losing focus of this field
+	$('#baseFontSize').blur(function(){
+		_gaq.push(['_trackEvent', 'customize', 'Forms', 'baseFontSize']);
+	});
+	
+	
+	$('#baseLineHeight').keyup(function(){
+		//cache our input since we will be working with it each time an arrow key is pressed
+		var $input = $('#baseLineHeight'),
+			
+			//removing the px at the end of the string
+			valueInt = parseInt($input.val().slice(0,-2));
+			
+		//up-arrow (regular and num-pad)
+		if (event.which == 38 || event.which == 104) {
+
+			//make sure to use `parseInt()` so you can numerically add to the value rather than concocting a longer string
+			valueInt += 1;
+			$input.val(valueInt+"px");
+
+		//down-arrow (regular and num-pad)
+		}else if (event.which == 40 || event.which == 98) {
+			valueInt -= 1;
+			$input.val(valueInt+"px");
+		}
+		
+		//Main body
+		$(".preview").css("line-height", valueInt + "px");
+		
+		//type
+		$(".preview p").css("margin", "0 0 " + valueInt/2 + "px");
+		
+		$(".preview h1").css("margin", valueInt/2 + "px 0");
+		$(".preview h2").css("margin", valueInt/2 + "px 0");
+		$(".preview h3").css("margin", valueInt/2 + "px 0");
+		$(".preview h4").css("margin", valueInt/2 + "px 0");
+		
+		$(".preview h1").css("line-height", valueInt*2 + "px");
+		$(".preview h2").css("line-height", valueInt*2 + "px");
+		$(".preview h3").css("line-height", valueInt*2 + "px");
+		$(".preview h4").css("line-height", valueInt + "px");
+		
+		$(".preview li").css("line-height", valueInt + "px");
+	
+		$(".preview hr").css("margin", valueInt + "px 0");
+		
+		//alerts
+		$(".preview .alert").css("margin-bottom", valueInt + "px");
+		$(".preview .alert").css("line-height", valueInt + "px");
+		$(".preview .close").css("line-height", valueInt + "px");
+		
+		//Buttons
+		$(".preview .btn").css("line-height", valueInt + "px");
+		
+		//Dropdown menu
+		$(".preview .dropdown-menu li>a").css("line-height", valueInt + "px");
+		
+		//Form elements
+		$(".preview .formPreview").css("margin", "0 0 "+valueInt + "px");
+		$(".preview .formPreview legend").css("margin-bottom", valueInt + "px");
+		$(".preview .formPreview legend").css("line-height", valueInt*2 + "px");
+		
+		$(".preview .formPreview input").css("line-height", valueInt + "px");
+		$(".preview .formPreview textarea").css("line-height", valueInt + "px");
+		
+		//this include the search field in the nav bar
+		$(".preview input").css("height", valueInt + "px");
+		$(".preview .formPreview textarea").css("height", valueInt + "px");
+		
+		$(".preview .formPreview input").css("margin-bottom", valueInt/2 + "px");
+		$(".preview .formPreview select").css("margin-bottom", valueInt/2 + "px");
+		$(".preview .formPreview textarea").css("margin-bottom", valueInt/2 + "px");
+		
+		$(".preview .formPreview .form-actions").css("padding", valueInt-1 +"px 20px "+ valueInt +"px");
+		$(".preview .formPreview .form-actions").css("margin-top", valueInt +"px");
+		$(".preview .formPreview .form-actions").css("margin-bottom", valueInt +"px");
+		
+		$(".preview .formPreview .help-block").css("margin-bottom", valueInt/2 +"px");
+		
+		//Hero Unit
+		$(".preview .formPreview .hero-unit").css("line-height", valueInt*1.5 +"px");
+		
+		var navbarHeight = parseInt($('#navbarHeight').val().slice(0,-2));
+		
+		//Navbar
+		$(".preview .navbar").css("margin-bottom", valueInt + "px");
+		$(".preview .navbar .brand").css("padding", ((navbarHeight - valueInt)/2) +"px 20px " + ((navbarHeight - valueInt)/2) + "px");
+		$(".preview .navbar .nav > li > a").css("padding", ((navbarHeight - valueInt)/2) +"px 15px " + ((navbarHeight - valueInt)/2) + "px");
+		//$(".preview .navbar .navbar-text").css("padding", ((navbarHeight - valueInt)/2) +"px 15px " + ((navbarHeight - valueInt)/2) + "px");
+		$(".preview .navbar .navbar-text").css("line-height", $('#navbarHeight').val());
+		
+		
+		//pagination
+		$(".preview .pagination").css("margin", valueInt + "px 0");
+		$(".preview .pagination ul > li > a").css("line-height", valueInt + "px");
+		
+		//tables
+		$(".preview .table").css("margin-bottom", valueInt + "px");
+		$(".preview td").css("line-height", valueInt + "px");
+		
+		
+	});
+	
+	//track this event with google analytics upon losing focus of this field
+	$('#baseLineHeight').blur(function(){
+		_gaq.push(['_trackEvent', 'customize', 'Forms', 'baseLineHeight']);
+	});
+	
 	
 	////////////////////////////////////////////////////////////
 	//Actions for Hero Unit
@@ -465,11 +619,11 @@ $(function () {
 		if (event.which == 38 || event.which == 104) {
 
 			//make sure to use `parseInt()` so you can numerically add to the value rather than concocting a longer string
-			$input.val((parseInt($input.val().substring(0,strLength-2)) + 1)+"px");
+			$input.val((parseInt($input.val().slice(0,-2)) + 1)+"px");
 
 		//down-arrow (regular and num-pad)
 		}else if (event.which == 40 || event.which == 98) {
-			$input.val((parseInt($input.val().substring(0,strLength-2)) - 1)+"px");
+			$input.val((parseInt($input.val().slice(0,-2)) - 1)+"px");
 		}
 	
 		$(".preview .formPreview input").css("-webkit-border-radius", $('#inputBorderRadius').val());
@@ -963,24 +1117,45 @@ $(function () {
 	////////////////////////////////////////////////////
 	// Navbar common actions
 	////////////////////////////////////////////////////
-	$('#navbarHeight').change(function(){
+	$('#navbarHeight').keyup(function(){
+		//cache our input since we will be working with it each time an arrow key is pressed
+		var $input = $('#navbarHeight'),
+			
+			//removing the px at the end of the string
+			valueInt = parseInt($input.val().slice(0,-2));
+			
+		//up-arrow (regular and num-pad)
+		if (event.which == 38 || event.which == 104) {
+
+			//make sure to use `parseInt()` so you can numerically add to the value rather than concocting a longer string
+			valueInt += 1;
+			$input.val(valueInt+"px");
+
+		//down-arrow (regular and num-pad)
+		}else if (event.which == 40 || event.which == 98) {
+			valueInt -= 1;
+			$input.val(valueInt+"px");
+		}
+		
+		var baseLineHeight = parseInt($('#baseLineHeight').val().slice(0,-2));
+		
 		//for Normal navbar
-		$("#navbarPreview .navbar-inner").css('min-height', $(this).val());
-		$("#navbarPreview .brand").css('padding', ($('#navbarHeight').val().slice(0,-2)-20)/2+"px 20px "+($('#navbarHeight').val().slice(0,-2)-20)/2+"px");
+		$("#navbarPreview .navbar-inner").css('min-height', $('#navbarHeight').val());
+		$("#navbarPreview .brand").css('padding', (valueInt-baseLineHeight)/2+"px 20px "+(valueInt-baseLineHeight)/2+"px");
 		$("#navbarPreview .navbar-text").css('line-height', $('#navbarHeight').val());
 		$("#navbarPreview .divider-vertical").css('height', $('#navbarHeight').val());
-		$("#navbarPreview .nav > li > a").css('padding', ($('#navbarHeight').val().slice(0,-2)-20)/2+"px 15px "+($('#navbarHeight').val().slice(0,-2)-20)/2+"px");
-		$("#navbarPreview .navbar-search").css('margin-top', ($('#navbarHeight').val().slice(0,-2)-30)/2+"px");
-		$("#navbarPreview .btn-navbar").css('margin-top', ($('#navbarHeight').val().slice(0,-2)-30)/2+"px");
+		$("#navbarPreview .nav > li > a").css('padding', (valueInt-baseLineHeight)/2+"px 15px "+(valueInt-baseLineHeight)/2+"px");
+		$("#navbarPreview .navbar-search").css('margin-top', (valueInt-30)/2+"px");
+		$("#navbarPreview .btn-navbar").css('margin-top', (valueInt-30)/2+"px");
 
 		//for navbar-inverse
-		$("#navbarInversePreview .navbar-inner").css('min-height', $(this).val());
-		$("#navbarInversePreview .brand").css('padding', ($('#navbarHeight').val().slice(0,-2)-20)/2+"px 20px "+($('#navbarHeight').val().slice(0,-2)-20)/2+"px");
+		$("#navbarInversePreview .navbar-inner").css('min-height', $('#navbarHeight').val());
+		$("#navbarInversePreview .brand").css('padding', (valueInt-baseLineHeight)/2+"px 20px "+(valueInt-baseLineHeight)/2+"px");
 		$("#navbarInversePreview .navbar-text").css('line-height', $('#navbarHeight').val());
 		$("#navbarInversePreview .divider-vertical").css('height', $('#navbarHeight').val());
-		$("#navbarInversePreview .nav > li > a").css('padding', ($('#navbarHeight').val().slice(0,-2)-20)/2+"px 15px "+($('#navbarHeight').val().slice(0,-2)-20)/2+"px");
-		$("#navbarInversePreview .navbar-search").css('margin-top', ($('#navbarHeight').val().slice(0,-2)-30)/2+"px");
-		$("#navbarInversePreview .btn-navbar").css('margin-top', ($('#navbarHeight').val().slice(0,-2)-30)/2+"px");
+		$("#navbarInversePreview .nav > li > a").css('padding', (valueInt-baseLineHeight)/2+"px 15px "+(valueInt-baseLineHeight)/2+"px");
+		$("#navbarInversePreview .navbar-search").css('margin-top', (valueInt-30)/2+"px");
+		$("#navbarInversePreview .btn-navbar").css('margin-top', (valueInt-30)/2+"px");
 	});
 	
 	$('#navbarHeight').blur(function(){
