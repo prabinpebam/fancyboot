@@ -1,8 +1,8 @@
 /* ========================================================================
- * Bootstrap: scrollspy.js v3.1.1
+ * Bootstrap: scrollspy.js v3.3.6
  * http://getbootstrap.com/javascript/#scrollspy
  * ========================================================================
- * Copyright 2011-2014 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -14,35 +14,43 @@
   // ==========================
 
   function ScrollSpy(element, options) {
-    var href
-    var process  = $.proxy(this.process, this)
-
-    this.$element       = $(element).is('body') ? $(window) : $(element)
-    this.$body          = $('body')
-    this.$scrollElement = this.$element.on('scroll.bs.scrollspy', process)
+    this.$body          = $(document.body)
+    this.$scrollElement = $(element).is(document.body) ? $(window) : $(element)
     this.options        = $.extend({}, ScrollSpy.DEFAULTS, options)
-    this.selector       = (this.options.target
-      || ((href = $(element).attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) //strip for ie7
-      || '') + ' .nav li > a'
-    this.offsets        = $([])
-    this.targets        = $([])
+    this.selector       = (this.options.target || '') + ' .nav li > a'
+    this.offsets        = []
+    this.targets        = []
     this.activeTarget   = null
+    this.scrollHeight   = 0
 
+    this.$scrollElement.on('scroll.bs.scrollspy', $.proxy(this.process, this))
     this.refresh()
     this.process()
   }
+
+  ScrollSpy.VERSION  = '3.3.6'
 
   ScrollSpy.DEFAULTS = {
     offset: 10
   }
 
+  ScrollSpy.prototype.getScrollHeight = function () {
+    return this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight)
+  }
+
   ScrollSpy.prototype.refresh = function () {
-    var offsetMethod = this.$element[0] == window ? 'offset' : 'position'
+    var that          = this
+    var offsetMethod  = 'offset'
+    var offsetBase    = 0
 
-    this.offsets = $([])
-    this.targets = $([])
+    this.offsets      = []
+    this.targets      = []
+    this.scrollHeight = this.getScrollHeight()
 
-    var self     = this
+    if (!$.isWindow(this.$scrollElement[0])) {
+      offsetMethod = 'position'
+      offsetBase   = this.$scrollElement.scrollTop()
+    }
 
     this.$body
       .find(this.selector)
@@ -54,50 +62,53 @@
         return ($href
           && $href.length
           && $href.is(':visible')
-          && [[ $href[offsetMethod]().top + (!$.isWindow(self.$scrollElement.get(0)) && self.$scrollElement.scrollTop()), href ]]) || null
+          && [[$href[offsetMethod]().top + offsetBase, href]]) || null
       })
       .sort(function (a, b) { return a[0] - b[0] })
       .each(function () {
-        self.offsets.push(this[0])
-        self.targets.push(this[1])
+        that.offsets.push(this[0])
+        that.targets.push(this[1])
       })
   }
 
   ScrollSpy.prototype.process = function () {
     var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset
-    var scrollHeight = this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight)
-    var maxScroll    = scrollHeight - this.$scrollElement.height()
+    var scrollHeight = this.getScrollHeight()
+    var maxScroll    = this.options.offset + scrollHeight - this.$scrollElement.height()
     var offsets      = this.offsets
     var targets      = this.targets
     var activeTarget = this.activeTarget
     var i
 
-    if (scrollTop >= maxScroll) {
-      return activeTarget != (i = targets.last()[0]) && this.activate(i)
+    if (this.scrollHeight != scrollHeight) {
+      this.refresh()
     }
 
-    if (activeTarget && scrollTop <= offsets[0]) {
-      return activeTarget != (i = targets[0]) && this.activate(i)
+    if (scrollTop >= maxScroll) {
+      return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
+    }
+
+    if (activeTarget && scrollTop < offsets[0]) {
+      this.activeTarget = null
+      return this.clear()
     }
 
     for (i = offsets.length; i--;) {
       activeTarget != targets[i]
         && scrollTop >= offsets[i]
-        && (!offsets[i + 1] || scrollTop <= offsets[i + 1])
-        && this.activate( targets[i] )
+        && (offsets[i + 1] === undefined || scrollTop < offsets[i + 1])
+        && this.activate(targets[i])
     }
   }
 
   ScrollSpy.prototype.activate = function (target) {
     this.activeTarget = target
 
-    $(this.selector)
-      .parentsUntil(this.options.target, '.active')
-      .removeClass('active')
+    this.clear()
 
     var selector = this.selector +
-        '[data-target="' + target + '"],' +
-        this.selector + '[href="' + target + '"]'
+      '[data-target="' + target + '"],' +
+      this.selector + '[href="' + target + '"]'
 
     var active = $(selector)
       .parents('li')
@@ -110,6 +121,12 @@
     }
 
     active.trigger('activate.bs.scrollspy')
+  }
+
+  ScrollSpy.prototype.clear = function () {
+    $(this.selector)
+      .parentsUntil(this.options.target, '.active')
+      .removeClass('active')
   }
 
 
